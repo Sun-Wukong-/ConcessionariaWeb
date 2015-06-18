@@ -282,11 +282,12 @@
 					<h3 align="center">Preco: <input name="preco"/><br/></h3> 		
 					<h3 align="center"><input type="submit" value="Salvar"/></h3>
 				</form>	
-				<a href="http://localhost:8080/ConcessionariaCastelo/produto" target="_blank"><h2 align="center">Lista Produto</h2></a>
 				<form action="removerproduto"  method = "POST">
+					<h2 align="center">Excluir Produto</h2>
 					<h3 align="center">Codigo Produto: <input name="codigoExcluir"/><br/></h3>
 					<h3 align="center"><input type="submit" value="Excluir"/></h3>
 				</form>
+				<a href="http://localhost:8080/ConcessionariaCastelo/produto" target="_blank"><h2 align="center">Lista Produto</h2></a>
 				
 </body>
 </html>

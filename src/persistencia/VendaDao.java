@@ -1,11 +1,10 @@
 package persistencia;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,6 +81,7 @@ public class VendaDao {
  			venda.setCodigo(rs.getLong("codigoVenda"));
  			venda.setData(rs.getString("data"));
  			venda.setRegistroVendedor(rs.getLong("codigoVendedor"));
+ 			venda.setCodigoProduto(rs.getInt("Produto_codigoProduto"));
  			venda.setDesconto(rs.getDouble("desconto"));
  			venda.setValorAcessorios(rs.getDouble("valorAcessorio"));
  			venda.setValorTotal(rs.getDouble("ValorTotal"));
@@ -109,9 +109,7 @@ public class VendaDao {
     			venda.setCodigo(rs.getLong("codigoVenda"));
     			venda.setRegistroVendedor(rs.getLong("codigoVendedor"));
     			
-    			DateFormat df = new SimpleDateFormat("data");
-    			String reportDate = df.format(df);
-    			venda.setData(rs.getString(reportDate));
+    			venda.setData(rs.getString("data"));
     			
     			venda.setCodigoProduto(rs.getLong("Produto_codigoProduto"));
     			venda.setDesconto(rs.getDouble("desconto"));

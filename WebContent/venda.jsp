@@ -278,9 +278,15 @@
 			<h3 align="center">Codigo Produto: <input name="codigoProduto"/><br/></h3> 
 			<h3 align="center">Desconto: <input name="desconto"/><br/></h3> 
 			<h3 align="center">Valor Acessórios: <input name="valorAcessorios"/><br/></h3> 		
-			<input type="submit" value="Salvar"/></h3>
+			<h3 align="center"><input type="submit" value="Salvar"/></h3>
 		</form>	
-		<a href="http://localhost:8080/ConcessionariaCastelo/venda" target="_blank">Lista Vendas</a>
-		<a href="http://localhost:8080/ConcessionariaCastelo/excluirvenda.jsp" target="_blank">Excluir Venda</a>
+		
+		<h2 align="center">Excluir Venda</h2>
+		<form action="removervenda"  method = "POST">
+			<h3 align="center">Codigo Venda: <input name="codigoExcluir"/></h3>
+			<h3 align="center"><input type="submit" value="Excluir"/></h3>
+		</form>
+		
+		<a href="http://localhost:8080/ConcessionariaCastelo/venda" target="_blank"><h2 align="center">Lista Vendas</h2></a>
 </body>
 </html>

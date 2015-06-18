@@ -272,7 +272,7 @@
 
 </head>
 <body>
-	<table border="1">
+	<table border="1" align="center">
 		<tr bgcolor="red">
 			<th>Codigo</th> <th>Modelo</th> <th>Marca</th> <th>Ano</th> <th>Cor</th> <th>Preço</th>
 		</tr>

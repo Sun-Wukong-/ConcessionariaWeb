@@ -21,7 +21,7 @@ public class RemoverVendaServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
     	
-        id = Integer.parseInt(request.getParameter("codigo"));
+        id = Integer.parseInt(request.getParameter("codigoExcluir"));
         
         try {
             VendaDao dao = new VendaDao();
