@@ -28,8 +28,6 @@ public class VendaControle extends HttpServlet {
     		HttpServletResponse response) 
     				throws ServletException, IOException{
     	
-    	//String id = request.getParameter("codigo");
-    	
     	Venda venda = new Venda();
 
 		venda.setData(request.getParameter("data"));
@@ -57,5 +55,6 @@ public class VendaControle extends HttpServlet {
 			saida.forward(request,response);
 			
 		} catch (SQLException e) {}
+    	
     } 
 }

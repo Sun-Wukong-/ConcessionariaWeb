@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ page import="modelo.Venda" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Venda</title>
+<title>Pesquisar Venda by ID</title>
 
 <style type="text/css">
 		@charset "UTF-8";
@@ -270,29 +271,23 @@
 
 </head>
 <body>
-<h1 align="center">Manter Venda</h1>
-<h2 align="center">Cadastro Venda</h2>
-		<form action="venda"  method = "POST">
-			<h3 align="center">Data: <input name="data"/><br/></h3>
-			<h3 align="center">Registro Vendedor: <input name="registroVendedor"/><br/></h3> 
-			<h3 align="center">Codigo Produto: <input name="codigoProduto"/><br/></h3> 
-			<h3 align="center">Desconto: <input name="desconto"/><br/></h3> 
-			<h3 align="center">Valor Acessórios: <input name="valorAcessorios"/><br/></h3> 		
-			<h3 align="center"><input type="submit" value="Salvar"/></h3>
-		</form>	
-		
-		<h2 align="center">Excluir Venda</h2>
-		<form action="removervenda"  method = "POST">
-			<h3 align="center">Codigo Venda: <input name="codigoExcluir"/></h3>
-			<h3 align="center"><input type="submit" value="Excluir"/></h3>
-		</form>
-		
-		<a href="http://localhost:8080/ConcessionariaCastelo/venda" target="_blank"><h2 align="center">Lista Vendas</h2></a>
-		
-		<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda" target="_blank"><h2 align="center">Lista Vendas por ID</h2></a>
-		<form action="pesquisarvenda"  method = "POST">
-			<h3 align="center">Codigo Venda: <input name="codigoGetById"/></h3>
-			<h3 align="center"><input type="submit" value="Pesquisar"/></h3>
-		</form>
+	<table border="1" align="center">
+		<tr bgcolor="red">
+			<th>Codigo</th> <th>Data</th> <th>Registro Vendedor</th> <th>Codigo Produto</th> <th>Desconto</th> <th>Valor Acessorios</th> <th>Valor Total</th>
+		</tr>
+<%
+		Venda vendas = (Venda) request.getAttribute("venda");
+%>	
+		<tr>
+			<td><%= vendas.getCodigo()%></td>
+			<td><%= vendas.getData()%></td>
+			<td><%= vendas.getRegistroVendedor()%></td>
+			<td><%= vendas.getCodigoProduto()%></td>
+			<td><%= vendas.getDesconto()%></td>
+			<td><%= vendas.getValorAcessorios()%></td>
+			<td><%= vendas.getValorTotal()%></td>
+		</tr>
+
+	</table>
 </body>
 </html>
