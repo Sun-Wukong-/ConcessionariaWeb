@@ -4,22 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Produto</title>
+<title>Venda</title>
 
-	<style type="text/css">
+<style type="text/css">
 		@charset "UTF-8";
 		@font-face{
 			font-family:'FonteLogo';
 			src:url("../_fonts/CUTEL___.ttf")
 		}
-		/*FormataÃ§Ã£o Body*/
+		/*Formatação Body*/
 		body{
 			font-family:Arial, sans-serif;
 			background-color: #dddddd;
 			color: rgba(0,0,0,1);
 		}
 		
-		/*FormataÃ§Ã£o Imagem*/
+		/*Formatação Imagem*/
 		figure.fotolegenda{
 			position:relative;
 			border:8px solid white;
@@ -50,7 +50,7 @@
 		
 		}
 		
-		/*FormaÃ§Ã£o Header*/
+		/*Formação Header*/
 		header#cabecalho img#icone2{
 			position:absolute;
 			left:360px;
@@ -87,7 +87,7 @@
 		
 		}
 		
-		/*FormaÃ§Ã£o Interface*/
+		/*Formação Interface*/
 		
 		div#interface{
 			width: 1000px;
@@ -111,7 +111,7 @@
 			text-decoration:underline;
 		}
 		
-		/*FormataÃ§Ã£o do Menu*/
+		/*Formatação do Menu*/
 		
 		nav#menu{
 			display: block;
@@ -270,23 +270,17 @@
 
 </head>
 <body>
-	<h1 align="center">Manter Produto</h1>
-				<form action="produto"  method = "POST">
-					<h2 align="center">Update Produto</h2>
-					<h3 align="center">Codigo: <input name="codigoAlterar"/></h3>
-					<h2 align="center">Cadastro Produto</h2></h3>
-					<h3 align="center">Marca: <input name="marca"/><br/></h3>
-					<h3 align="center">Modelo: <input name="modelo"/><br/></h3>
-					<h3 align="center">Ano: <input name="ano"/><br/></h3> 
-					<h3 align="center">Cor: <input name="cor"/><br/></h3>
-					<h3 align="center">Preco: <input name="preco"/><br/></h3> 		
-					<h3 align="center"><input type="submit" value="Salvar"/></h3>
-				</form>	
-				<a href="http://localhost:8080/ConcessionariaCastelo/produto" target="_blank"><h2 align="center">Lista Produto</h2></a>
-				<form action="removerproduto"  method = "POST">
-					<h3 align="center">Codigo Produto: <input name="codigoExcluir"/><br/></h3>
-					<h3 align="center"><input type="submit" value="Excluir"/></h3>
-				</form>
-				
+<h1 align="center">Manter Venda</h1>
+<h2 align="center">Cadastro Venda</h2>
+		<form action="venda"  method = "POST">
+			<h3 align="center">Data: <input name="data"/><br/></h3>
+			<h3 align="center">Registro Vendedor: <input name="registroVendedor"/><br/></h3> 
+			<h3 align="center">Codigo Produto: <input name="codigoProduto"/><br/></h3> 
+			<h3 align="center">Desconto: <input name="desconto"/><br/></h3> 
+			<h3 align="center">Valor Acessórios: <input name="valorAcessorios"/><br/></h3> 		
+			<input type="submit" value="Salvar"/></h3>
+		</form>	
+		<a href="http://localhost:8080/ConcessionariaCastelo/venda" target="_blank">Lista Vendas</a>
+		<a href="http://localhost:8080/ConcessionariaCastelo/excluirvenda.jsp" target="_blank">Excluir Venda</a>
 </body>
 </html>

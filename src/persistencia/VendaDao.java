@@ -1,10 +1,13 @@
 package persistencia;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import modelo.Venda;
 
@@ -31,7 +34,7 @@ public class VendaDao {
            try ( // prepared statement para inserção
                    PreparedStatement stmt = connection.prepareStatement(sql)) {
                // seta os valores
-               stmt.setDate(1,(Date) venda.getData());
+               stmt.setString(1, venda.getData());
                stmt.setLong(2,venda.getRegistroVendedor());
                stmt.setDouble(3, venda.getDesconto());
                stmt.setDouble(4,venda.getValorAcessorios());
@@ -58,6 +61,40 @@ public class VendaDao {
          }
      } 
     
+ // Pesquisar os dados do BD	pelo código
+ 	public List<Venda> getAllVendas() throws SQLException {
+ 		
+ 		List<Venda> vendas = new ArrayList<Venda>();
+ 		
+ 		String sql = "select codigoVenda, codigoVendedor, data, Produto_codigoProduto, desconto, valorAcessorio,"
+                + "( produto.preco + venda.valorAcessorio - venda.desconto "
+                + ") as ValorTotal " //Calculo do Valor Total
+                + "from venda,produto where codigoProduto = Produto_codigoProduto";
+ 		PreparedStatement stmt = connection.prepareStatement(sql);
+ 		
+ 		// Executa o select
+ 		ResultSet rs = stmt.executeQuery();
+ 				
+ 		while (rs.next()) {
+ 			
+ 			Venda venda = new Venda();
+ 			
+ 			venda.setCodigo(rs.getLong("codigoVenda"));
+ 			venda.setData(rs.getString("data"));
+ 			venda.setRegistroVendedor(rs.getLong("codigoVendedor"));
+ 			venda.setDesconto(rs.getDouble("desconto"));
+ 			venda.setValorAcessorios(rs.getDouble("valorAcessorio"));
+ 			venda.setValorTotal(rs.getDouble("ValorTotal"));
+ 			
+ 			vendas.add(venda);
+ 		}		
+ 		
+ 		rs.close();
+ 		stmt.close();
+ 		
+ 		return vendas;
+ 	}	
+    
     public Venda getVendaById(int id) {
         Venda venda = new Venda();
         try {
@@ -71,7 +108,11 @@ public class VendaDao {
             if (rs.next()) {
     			venda.setCodigo(rs.getLong("codigoVenda"));
     			venda.setRegistroVendedor(rs.getLong("codigoVendedor"));
-    			venda.setData(rs.getDate("data"));
+    			
+    			DateFormat df = new SimpleDateFormat("data");
+    			String reportDate = df.format(df);
+    			venda.setData(rs.getString(reportDate));
+    			
     			venda.setCodigoProduto(rs.getLong("Produto_codigoProduto"));
     			venda.setDesconto(rs.getDouble("desconto"));
     			venda.setValorAcessorios(rs.getDouble("valorAcessorio"));

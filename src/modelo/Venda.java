@@ -1,7 +1,5 @@
 package modelo;
 
-import java.util.Date;
-
 /**
  *
  * @author Wukong
@@ -9,7 +7,7 @@ import java.util.Date;
 public class Venda {
     
     private long codigo;
-    private Date data;
+    private String data;
     private long registroVendedor;
     private long codigoProduto; 
     private double desconto;
@@ -82,11 +80,11 @@ public class Venda {
 		this.valorTotal = valorTotal;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 }

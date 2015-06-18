@@ -129,7 +129,7 @@ public class ProdutoDao {
          }
      } 
     
-	// Pesquisar os dados do BD	pelo código
+	// Pesquisar os dados
 	public List<Produto> getAllProdutos() throws SQLException {
 		
 		List<Produto> produtos = new ArrayList<Produto>();
@@ -160,6 +160,7 @@ public class ProdutoDao {
 		return produtos;
 	}	
 	
+	// Pesquisar os dados do BD	pelo código
 	 public Produto getProdutoById(int id) {
 	        Produto produto = new Produto();
 	        try {

@@ -28,7 +28,7 @@ public class ProdutoControle extends HttpServlet {
     protected void doPost(HttpServletRequest request, 
     		HttpServletResponse response) 
     				throws ServletException, IOException{
-    	String id = request.getParameter("codigo");
+    	String id = request.getParameter("codigoAlterar");
     	
     	Produto produto = new Produto();
         produto.setMarca(request.getParameter("marca"));

@@ -2,23 +2,17 @@ package controle;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import persistencia.ProdutoDao;
+import persistencia.VendaDao;
 
-/**
- *
- * @author Wukong
- */
-
-@WebServlet("/removerproduto")
+@WebServlet("/removervenda")
 @SuppressWarnings("serial")
-public class RemoverProdutoServlet extends HttpServlet {    
+public class RemoverVendaServlet extends HttpServlet {    
     
 	private int id;
 
@@ -27,10 +21,10 @@ public class RemoverProdutoServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
     	
-        id = Integer.parseInt(request.getParameter("codigoExcluir"));
+        id = Integer.parseInt(request.getParameter("codigo"));
         
         try {
-            ProdutoDao dao = new ProdutoDao();
+            VendaDao dao = new VendaDao();
             dao.remover(id);
         } catch (Exception e) {
             

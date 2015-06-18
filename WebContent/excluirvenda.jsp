@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Excluir Produto</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="removerproduto"  method = "POST">
-			Codigo Produto: <input name="codigo"/><br/>
+	<form action="removervenda"  method = "POST">
+			Codigo Venda: <input name="codigo"/><br/>
 			<input type="submit" value="Excluir"/>
 			</form>
 </body>
