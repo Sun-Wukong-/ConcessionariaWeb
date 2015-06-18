@@ -13,6 +13,8 @@ public class Venda {
     private double desconto;
     private double valorAcessorios;
     private double valorTotal;
+    private int qtd;
+    private double valorTotalVendas;
 
     /**
      * @return the codigo
@@ -86,5 +88,21 @@ public class Venda {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public int getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(int qtd) {
+		this.qtd = qtd;
+	}
+
+	public double getValorTotalVendas() {
+		return valorTotalVendas;
+	}
+
+	public void setValorTotalVendas(double valorTotalVendas) {
+		this.valorTotalVendas = valorTotalVendas;
 	}
 }

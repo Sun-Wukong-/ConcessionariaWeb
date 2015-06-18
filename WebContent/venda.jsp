@@ -294,5 +294,17 @@
 			<h3 align="center">Codigo Venda: <input name="codigoGetById"/></h3>
 			<h3 align="center"><input type="submit" value="Pesquisar"/></h3>
 		</form>
+		
+		<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda" target="_blank"><h2 align="center">Lista Vendas por Data</h2></a>
+		<form action="pesquisarvenda"  method = "POST">
+			<h3 align="center">Data Venda: <input name="codigoGetByData"/></h3>
+			<h3 align="center"><input type="submit" value="Pesquisar"/></h3>
+		</form>
+		
+		<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda" target="_blank"><h2 align="center">Lista Vendas por Vendedor</h2></a>
+		<form action="pesquisarvenda"  method = "POST">
+			<h3 align="center">Codigo Vendedor: <input name="codigoGetByVendedor"/></h3>
+			<h3 align="center"><input type="submit" value="Pesquisar"/></h3>
+		</form>
 </body>
 </html>
