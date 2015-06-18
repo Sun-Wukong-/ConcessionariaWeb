@@ -1,8 +1,8 @@
 package controle;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,8 +20,6 @@ public class PesquisarVendaServlet extends HttpServlet {
     private VendaDao dao;
 	private int id;
 	private String data;
-	private List<Venda> vendaComp;
-	private Long codigoVendedor;
     
     public PesquisarVendaServlet() throws SQLException {
         super();
@@ -45,16 +43,13 @@ public class PesquisarVendaServlet extends HttpServlet {
     	//Obtendo Lista
     	if(data!=null && data!="" && data!="0"){
     		 venda = dao.getVendaByData(data);
-    		 vendaComp = dao.getVendaByDataComplementar(data);
-    	}else {
-    		venda = dao.getVendaById(id);
-    	}
+    	}else{
+	    		venda = dao.getVendaById(id);
+	    	}
 		
 		//Coloca a Lista no Request
 		request.setAttribute("venda",venda);
-		request.setAttribute("vendas",vendaComp);
 
-		
 		//Encaminhando para o JSP
 		RequestDispatcher saida = request.getRequestDispatcher("listavendabyid.jsp");
 		saida.forward(request,response);

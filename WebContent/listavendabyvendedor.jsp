@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import="modelo.Venda" %>
- <%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <%@ page import="modelo.Venda" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pesquisar Venda by ID</title>
+<title>Vendas Vendedor</title>
 
 <style type="text/css">
 		@charset "UTF-8";
@@ -272,28 +271,14 @@
 
 </head>
 <body>
-	<table border="1" align="center">
-		<tr bgcolor="red">
-			<th>Codigo</th> <th>Data</th> <th>Registro Vendedor</th> <th>Codigo Produto</th> <th>Desconto</th> <th>Valor Acessorios</th> <th>Valor Total</th>
-		</tr>
+
 <%
 		Venda vendas = (Venda) request.getAttribute("venda");
-%>	
-		<tr>
-			<td><%= vendas.getCodigo()%></td>
-			<td><%= vendas.getData()%></td>
-			<td><%= vendas.getRegistroVendedor()%></td>
-			<td><%= vendas.getCodigoProduto()%></td>
-			<td><%= vendas.getDesconto()%></td>
-			<td><%= vendas.getValorAcessorios()%></td>
-			<td><%= vendas.getValorTotal()%></td>
-		</tr>
+%>
 
-	</table>
-	
-	<table border="1" align="center">
+<table border="1" align="center">
 		<tr bgcolor="red">
-			<th>Quantidade Vendidada na Data</th> <th>Valor Total das Vendas na Data</th> 
+			<th>Quantidade Vendidada do Vendedor</th> <th>Valor Total das Vendas do Vendedo</th> 
 		</tr>
 
 		<tr>
@@ -303,6 +288,5 @@
 		</tr>
 
 	</table>
-
 </body>
 </html>
