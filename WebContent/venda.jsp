@@ -219,7 +219,7 @@
 				<h2>Pesquisa Venda</h2>
 			</li>
 			<li>		
-				<a href="http://localhost:8080/ConcessionariaCastelo/venda" target="_blank"><h2 align="left">Lista Vendas</h2></a>
+				<a href="http://localhost:8080/ConcessionariaCastelo/venda"><h2 align="left">Lista Vendas</h2></a>
 			</li>
 		</ul>
 		
@@ -238,7 +238,7 @@
 				    <button class="submit" type="submit">Enviar Formulario</button>
 				</li>
 				<li>
-					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda" target="_blank"><h2 align="center">Lista Vendas por ID</h2></a>
+					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda"><h2 align="center">Lista Vendas por ID</h2></a>
 				</li>
 		  </ul>
 	  </form>
@@ -258,7 +258,7 @@
 				    <button class="submit" type="submit">Enviar Formulario</button>
 				</li>
 				<li>
-					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda" target="_blank"><h2 align="center">Lista Vendas por Data</h2></a>
+					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisarvenda"><h2 align="center">Lista Vendas por Data</h2></a>
 				</li>
 		  </ul>
 	  </form>
@@ -278,7 +278,7 @@
 				    <button class="submit" type="submit">Enviar Formulario</button>
 				</li>
 				<li>
-					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisavendavendedor" target="_blank"><h2 align="center">Lista Vendas por Vendedor</h2></a>
+					<a href="http://localhost:8080/ConcessionariaCastelo/pesquisavendavendedor"><h2 align="center">Lista Vendas por Vendedor</h2></a>
 				</li>
 		  </ul>
 	  </form>

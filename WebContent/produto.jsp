@@ -223,7 +223,7 @@
 			<h2>Pesquisa Produto</h2>
 		</li>
 		<li>		
-			<a href="http://localhost:8080/ConcessionariaCastelo/produto" target="_blank"><h2 align="left">Lista Produtos</h2></a>
+			<a href="http://localhost:8080/ConcessionariaCastelo/produto"><h2 align="left">Lista Produtos</h2></a>
 		</li>
 	</ul>
 	
