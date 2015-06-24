@@ -147,7 +147,7 @@ public class VendaDao {
             PreparedStatement preparedStatement = connection.prepareStatement("select codigoVenda as CodigoVenda, codigoVendedor as RegistroVendedor, data as Data, Produto_codigoProduto as CodigoProduto, desconto as Desconto, valorAcessorio as ValorAcessorio, "
                     + "( produto.preco + venda.valorAcessorio - venda.desconto "
                     + ") as ValorTotal "
-                    + "from venda,produto where codigoVendedor = ? and codigoProduto = Produto_codigoProduto");
+                    + "from venda,produto where Data = ? and codigoProduto = Produto_codigoProduto");
             preparedStatement.setString(1, data);
             ResultSet rs = preparedStatement.executeQuery();
  
@@ -187,5 +187,34 @@ public class VendaDao {
         }
  
         return venda;
+    }
+    
+    public List<Venda> getVendaByVendedorComplementar(int data) {
+    	List<Venda> vendas = new ArrayList<Venda>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select codigoVenda as CodigoVenda, codigoVendedor as RegistroVendedor, data as Data, Produto_codigoProduto as CodigoProduto, desconto as Desconto, valorAcessorio as ValorAcessorio, "
+                    + "( produto.preco + venda.valorAcessorio - venda.desconto "
+                    + ") as ValorTotal "
+                    + "from venda,produto where codigoVendedor = ? and codigoProduto = Produto_codigoProduto");
+            preparedStatement.setInt(1, data);
+            ResultSet rs = preparedStatement.executeQuery();
+ 
+            if (rs.next()) {
+            	Venda venda = new Venda();
+            	venda.setCodigo(rs.getLong("codigoVenda"));
+     			venda.setData(rs.getString("data"));
+     			venda.setRegistroVendedor(rs.getLong("codigoVendedor"));
+     			venda.setCodigoProduto(rs.getInt("Produto_codigoProduto"));
+     			venda.setDesconto(rs.getDouble("desconto"));
+     			venda.setValorAcessorios(rs.getDouble("valorAcessorio"));
+     			venda.setValorTotal(rs.getDouble("ValorTotal"));
+     			
+     			vendas.add(venda);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+ 
+        return vendas;
     }
 }

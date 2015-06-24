@@ -32,7 +32,7 @@ public class PesquisarVendaServlet extends HttpServlet {
     	try{
     		id = Integer.parseInt(request.getParameter("codigoGetById"));
     	}catch(NumberFormatException e){} 
-    	data = request.getParameter("codigoGetByData");
+    		data = request.getParameter("codigoGetByData");
     }
 
     protected void doGet(HttpServletRequest request, 
@@ -49,9 +49,9 @@ public class PesquisarVendaServlet extends HttpServlet {
 		
 		//Coloca a Lista no Request
 		request.setAttribute("venda",venda);
-
 		//Encaminhando para o JSP
 		RequestDispatcher saida = request.getRequestDispatcher("listavendabyid.jsp");
+		
 		saida.forward(request,response);
     } 
 }
